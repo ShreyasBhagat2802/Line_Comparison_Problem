@@ -16,7 +16,13 @@ class Line:
         return math.sqrt((self.point2.x - self.point1.x) ** 2 + (self.point2.y - self.point1.y) ** 2)
 
 if __name__ == "__main__":
-    point1 = Point(1, 2)
-    point2 = Point(4, 6)
+    print("Line 1")
+    l1_x1 = int(input("x1 = "))
+    l1_y1 = int(input("y1 = "))
+    l1_x2 = int(input("X2 = "))
+    l1_y2 = int(input("y2 = "))
+    point1 = Point(l1_x1, l1_y1)
+    point2 = Point(l1_x2, l1_y2)
     line = Line(point1, point2)
     print(f"Length of the line: {line.length()}")
+
