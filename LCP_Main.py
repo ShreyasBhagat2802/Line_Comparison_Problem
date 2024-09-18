@@ -1,7 +1,7 @@
 print("Welcome to Line Comparison Computation Program on Master Branch")
 
-#UC 1
 import math
+
 class Point:
     def __init__(self, x, y):
         self.x = x
@@ -9,14 +9,29 @@ class Point:
 
 class Line:
     def __init__(self, p1, p2):
-        self.point1 = p1
-        self.point2 = p2
-
+        self.p1 = p1
+        self.p2 = p2
+    #UC1
     def length(self):
-        return math.sqrt((self.point2.x - self.point1.x) ** 2 + (self.point2.y - self.point1.y) ** 2)
+        return math.sqrt((self.p2.x - self.p1.x) ** 2 + (self.p2.y - self.p1.y) ** 2)
+
+    #UC2
+    def equality(self, l2):
+        if self.length() == l2.length():
+            return "Same" 
+        else:
+            return "Different"
 
 if __name__ == "__main__":
     point1 = Point(1, 2)
     point2 = Point(4, 6)
-    line = Line(point1, point2)
-    print(f"Length of the line: {line.length()}")
+    point3 = Point(3, 5)
+    point4 = Point(6, 9)
+    line1 = Line(point1, point2)
+    line2 = Line(point3, point4)
+    
+    print(line1.length())
+    print(line2.length())
+
+    equality_result = line1.equality(line2)
+    print(equality_result)
