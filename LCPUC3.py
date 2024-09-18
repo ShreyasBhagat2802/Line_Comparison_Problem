@@ -1,30 +1,24 @@
 #UC 3
+
 import math
-print("Line 1")
-l1_x1 = int(input("x1 = "))
-l1_y1 = int(input("y1 = "))
-l1_x2 = int(input("X2 = "))
-l1_y2 = int(input("y2 = "))
-l1_co = ((l1_x1,l1_y1),(l1_x2,l1_y2))
 
-print("Line 2")
-l2_x1 = int(input("x1 = "))
-l2_y1 = int(input("y1 = "))
-l2_x2 = int(input("X2 = "))
-l2_y2 = int(input("y2 = "))
-l2_co = ((l2_x1,l2_y1),(l2_x2,l2_y2))
+def compare_lines(line1, line2):
+    if line1.length() == line2.length():
+        return "The two lines are equal in length."
+    elif line1.length() > line2.length():
+        return "The first line is greater than the second line."
+    else:
+        return "The first line is less than the second line."
 
 
-print(l1_co)
-length1 = math.sqrt((l1_x2 - l1_x1)**2 + (l1_y2 - l1_y1)**2)
-print(length1)
-print(l2_co)
-length2 = math.sqrt((l2_x2 - l2_x1)**2 + (l2_y2 - l2_y1)**2)
-print(length2)
+if __name__ == "__main__":
+    point1 = Point(1, 2)
+    point2 = Point(4, 6)
+    point3 = Point(3, 5)
+    point4 = Point(6, 9)
+    line1 = Line(point1, point2)
+    line2 = Line(point3, point4)
+    
+    result = compare_lines(line1,line2)
+    print(result)
 
-if (l1_co == l2_co) or (l1_co == (l2_co[1], l2_co[0])):
-    print("Equal lines")
-elif length1 > length2:
-    print("Line1 is greater than Line2")
-else:
-    print("Line1 is less than Line2")
